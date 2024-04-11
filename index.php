@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="public/css/style_login.css" type="text/css" ">
+    <link rel="stylesheet" href="public/css/style_login.css" type="text/css">
     <link rel="style" href="public/css/style.css">
   </head>
   <body class="">
@@ -56,7 +56,7 @@
               <h3 class="fw-bold text-center">Iniciar sesión</h3>
             </div>
             <div class="card-body">
-
+            <form method="POST" class="needs-validation frm_login" novalidate>
                 <div class="input-group my-4">                
                   <span class="input-group-text material-icons md-dark" id="inputGroup-sizing-default">perm_identity</span>    
                 <input type="email" id="email" name="email" class="form-control" aria-label="Sizing example input" data-toggle="tooltip" data-placement="right" title="Ingresar correo electrónico" placeholder="Correo"  aria-describedby="inputGroup-sizing-default" required>
@@ -69,17 +69,17 @@
                     <input type="checkbox" id="showPassword"> Mostrar contraseña
                   </div>
                   <div class="d-grid mb-4">
-                    <!--<input type="submit" class="btn btn-primary" title="Iniciar Sesión" name="iniciar_sesion" value="Iniciar sesión">-->
-                    <button type="button" name="BtnLogin" class="btn btn-primary" id="BtnLogin" class="buttonModal">Iniciar sesión</button>                
+                  <input type="submit" class="btn btn-primary" title="Iniciar Sesión" name="iniciar_sesion" value="Iniciar sesión">  
                   </div>
                   <div class="d-flex justify-content-center">
                     <a title="Olvidó su contraseña" href="Recuperar-contrasena.php">¿Olvidaste tu contraseña?</a>
                   </div>
             </div>
+            </form>
             <div class="card-footer">
-              <div class="d-flex justify-content-center mb-2"> ¿Aún no estás registrado? </div>
+              <div class="d-flex justify-content-center mb-2"> </div>
                 <div class="d-flex justify-content-center mb-2">
-                  <a title="Registrarme" href="Registrarse.php">Registrarme</a>
+                 <!-- <a title="Registrarme" href="Registrarse.php">Registrarme</a>-->
 				      </div>			
             </div>
             </div>
@@ -90,6 +90,24 @@
       <div class="container text-white">Tribunal Administrativo del Poder Judicial del Estado de Chiapas | Todos los Derechos         Reservados | Blvd. Belisario Domínguez No. 1713, Col. Xamaipak, Tuxtla Gutiérrez, Chiapas.
       <a class="text-white" href="https://www.tachiapas.gob.mx/">www.tachiapas.gob.mx</a>
     </footer> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    </body>
+    <script src="FuncionesJS/Login.js"></script>
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+  </body>
 </html>
